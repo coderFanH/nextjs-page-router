@@ -3,7 +3,6 @@
 //   const data = await res.json()
 //   return { props: { data } }
 // }
-import { RenderingInfo } from "@/components/rendering-info"
 
 export const getServerSideProps = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts/1')
@@ -17,9 +16,8 @@ export default function Content({data}: {data: {body: string}}) {
     <div>
       <div>Dynamic Data</div>
       <div>{data.body}</div>
-      <div>
-        <RenderingInfo type='ssr' />
-      </div>
+      <p suppressHydrationWarning>{Date.now()}
+      </p>
     </div>
   )
 }

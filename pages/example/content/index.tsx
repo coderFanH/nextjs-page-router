@@ -1,5 +1,3 @@
-import { RenderingInfo } from "@/components/rendering-info"
-
 export const getStaticProps = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts/1')
   const data = await res.json()
@@ -18,9 +16,7 @@ export default function Content({data}: {data: {body: string}}) {
     <div>
       <div>Static Data</div>
       <div>{data.body}</div>
-      <div>
-        <RenderingInfo type="ssg"/>
-      </div>
+      <p suppressHydrationWarning>{Date.now()}</p>
     </div>
   )
 }
