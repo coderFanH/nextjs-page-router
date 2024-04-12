@@ -18,7 +18,7 @@ export default function Content({data}: {data: {body: string}}) {
       <div>Dynamic Data</div>
       <div>{data.body}</div>
       <div>
-        <RenderingInfo />
+        <RenderingInfo type='ssr' />
       </div>
     </div>
   )

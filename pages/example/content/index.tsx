@@ -19,7 +19,7 @@ export default function Content({data}: {data: {body: string}}) {
       <div>Static Data</div>
       <div>{data.body}</div>
       <div>
-        <RenderingInfo />
+        <RenderingInfo type="ssg"/>
       </div>
     </div>
   )
